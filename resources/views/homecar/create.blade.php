@@ -398,7 +398,7 @@ $date2 = $Y2.'-'.'01'.'-'.'01';
                             document.form1.PriceCar.value = addCommas(num3);
                           }
                         </script>
-                        @if(auth::user()->type == "Admin" or auth::user()->position == "MANAGER" or auth::user()->position == "AUDIT")
+                        @if(auth::user()->type == "Admin" or auth::user()->position == "MANAGER" or auth::user()->position == "AUDIT" || auth::user()->position =="Staff")
                         <div class="col-6">
                           <div class="form-group row mb-1">
                             <label class="col-sm-3 col-form-label text-right"><font color="red">* ราคาซื้อ</font> :</label>

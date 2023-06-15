@@ -180,7 +180,7 @@ $date3 = $Y.'-'.'01'.'-'.'01';
                 <a class="delete-modal btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-2" data-backdrop="static" data-link="{{ route('datacar.trackingCars',[$id,$datacar->Car_type,15]) }}">
                   <i class="fas fa-plus"></i> Tracking
                 </a>
-                @if(auth()->user()->position == 'Admin')
+                @if(auth()->user()->position == 'Admin' || auth::user()->position =="Staff")
                 <button type="submit" class="update-modal btn btn-success">
                   <i class="fas fa-save"></i> อัพเดท
                 </button>
@@ -634,7 +634,7 @@ $date3 = $Y.'-'.'01'.'-'.'01';
                       </div>
                       <div class="card-body">
 
-                       @if(auth::user()->type == "Admin" or auth::user()->position == "MANAGER" or auth::user()->position == "AUDIT")
+                       @if(auth::user()->type == "Admin" or auth::user()->position == "MANAGER" or auth::user()->position == "AUDIT" || auth::user()->position =="Staff")
                        <div class="row">
                         <div class="col-6">
                           <div class="form-group row mb-1">

@@ -100,6 +100,7 @@
                             <select name="position" class="form-control" style="width: 330px;">
                               <option selected disabled value="" >เลือกตำแหน่ง</option>
                               <option value="Admin"> Admin</option>
+                              <option value="Staff"> Staff admin</option>
                               <option value="MANAGER">Sale Manager</option>
                               <option value="SALE" >Sale Consultant</option>
                               <option value="Tradein" >Tradein Stafff</option>

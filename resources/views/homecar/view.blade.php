@@ -82,7 +82,7 @@ $date = $Y.'-'.$m.'-'.$d;
                   <form method="get" action="{{ route('datacar',$type) }}">
                     <div class="float-right form-inline">
                       @if($type == 1)
-                      @if(auth::user()->position == "Admin" )
+                      @if(auth::user()->position == "Admin" || auth::user()->position =="Staff" )
                       <a href="{{ route('datacar.create',1) }}" class="btn bg-success btn-app">
                         <span class="fas fa-plus"></span> เพิ่มข้อมูล
                       </a>
@@ -296,7 +296,7 @@ $date = $Y.'-'.$m.'-'.$d;
                               data-link="{{ action('DatacarController@viewsee',[$row->Datacar_id,$row->Car_type]) }}">
                               <i class="far fa-eye"></i>
                             </button>
-                            @if(auth::user()->position == "Admin" )
+                            @if(auth::user()->position == "Admin" || auth::user()->position =="Staff" )
                             <a href="{{ action('DatacarController@edit',[$row->Datacar_id,$row->Car_type]) }}" class="btn btn-warning btn-sm" title="แก้ไขรายการ">
                               <i class="far fa-edit"></i>
                             </a>
@@ -635,7 +635,7 @@ $date = $Y.'-'.$m.'-'.$d;
 
                </td>
                <td class="text-center">
-                 @if(auth::user()->position == "Admin" )
+                 @if(auth::user()->position == "Admin" || auth::user()->position =="Staff" )
                  <a href="{{ action('DatacarController@edit',[$row->Datacar_id,$row->Car_type]) }}" class="btn btn-warning btn-sm" title="แก้ไขรายการ">
                   <i class="far fa-edit"></i> 
                 </a>
@@ -809,7 +809,7 @@ $date = $Y.'-'.$m.'-'.$d;
       @endif
 
       @if ($type == 6)
-      @if(auth::user()->position == "Admin" )
+      @if(auth::user()->position == "Admin" ||auth::user()->position =="Staff")
         <a href="{{ action('DatacarController@edit',[$row->Datacar_id,$row->Car_type]) }}?editbuy=0" class="btn btn-danger btn-sm" title="แก้ไขรายการ">
         <i class="far fa-edit"></i> 
       </a> &nbsp;
