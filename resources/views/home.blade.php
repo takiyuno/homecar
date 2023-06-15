@@ -24,7 +24,7 @@
    
   <div class="card-body">
     <div class="row">
-        @if(auth::user()->position == "Admin" )
+        @if(auth::user()->position == "Admin" || auth::user()->position =="Staff" )
       <div class="col-lg-4 col-6">
         <div class="small-box bg-info">
           <div class="inner">
@@ -65,7 +65,7 @@
       
       
     </div>
-@if(auth::user()->position == "Admin" )
+@if(auth::user()->position == "Admin" || auth::user()->position =="Staff")
     <div class="row">
       <div class="col-lg-4 col-6">
         <div class="small-box bg-purple">
@@ -139,7 +139,7 @@
             <a href="{{ route('ResearchCus3', 2) }}" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        @if(auth::user()->position == "Admin" )
+        @if(auth::user()->position == "Admin" || auth::user()->position =="Staff" )
       <div class="col-lg-4 col-6">
           <div class="small-box bg-gray">
             <div class="inner">
