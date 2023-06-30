@@ -265,6 +265,7 @@
 			$objPHPExcel->getActiveSheet()->setCellValue('X1', 'ปีรถ');
 			$objPHPExcel->getActiveSheet()->setCellValue('Y1', 'ผู้รับผิดชอบ');
 			$objPHPExcel->getActiveSheet()->setCellValue('Z1', 'แหล่งที่ซื้อเข้า');
+			
 
 
 			// Set alignments จัดรูปแบบหน้า ตรงกลางซ้ายขวากึ่งกลาง
@@ -472,6 +473,7 @@
 			$objPHPExcel->getActiveSheet()->setCellValue('S1', 'แหล่งที่ซื้อเข้า');
 			$objPHPExcel->getActiveSheet()->setCellValue('T1', 'ประเภทการขาย');
 			$objPHPExcel->getActiveSheet()->setCellValue('U1', 'เลขตัวถัง');
+			$objPHPExcel->getActiveSheet()->setCellValue('V1', 'วันที่ขาย');
 
 			// Set alignments จัดรูปแบบหน้า ตรงกลางซ้ายขวากึ่งกลาง
 			//echo date('H:i:s') . " Set alignments\n";
@@ -578,6 +580,7 @@
 								$objPHPExcel->getActiveSheet()->setCellValue('S'.($r+2),$arrayOriginType[$d_car->Origin_Car]);
 								$objPHPExcel->getActiveSheet()->setCellValue('T'.($r+2),$d_car->Type_Ofsale);
 								$objPHPExcel->getActiveSheet()->setCellValue('U'.($r+2),$d_car->Chassis_car);
+								$objPHPExcel->getActiveSheet()->setCellValue('V'.($r+2),$d_car->Date_Soldout_plus);
 			                                //echo number_format($p_balance,2);
 								
 								$r++;
