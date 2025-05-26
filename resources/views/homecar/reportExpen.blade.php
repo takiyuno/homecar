@@ -104,10 +104,16 @@ $arrayOriginType = [
 ];
 
 
-	$data = DB::table('tracking_cars')
-	->leftjoin('data_cars','tracking_cars.id_cars','=' ,'data_cars.id')
+	// $data = DB::table('tracking_cars')
+	// ->leftjoin('data_cars','tracking_cars.id_cars','=' ,'data_cars.id')
+	// ->when(!empty($fdate)  && !empty($tdate), function($q) use ($fdate, $tdate) {
+	// 	return $q->whereBetween('tracking_cars.track_date',[$fdate,$tdate]);
+	// })
+
+	$data = DB::table('data_cars')
+	->leftjoin('data_expenses','data_expenses.Car_id','=' ,'data_cars.id')
 	->when(!empty($fdate)  && !empty($tdate), function($q) use ($fdate, $tdate) {
-		return $q->whereBetween('tracking_cars.track_date',[$fdate,$tdate]);
+		return $q->whereBetween('data_expenses.track_date',[$fdate,$tdate]);
 	})
 	// ->where(function($query) {
  //                $query->where('data_cars.BookStatus_Car','!=', 'ส่งมอบ')
